@@ -24,6 +24,11 @@
 
     self.arrivalDate = [NSDate dateWithTimeIntervalSince1970:1379154600];
 
+    if ([self.arrivalDate timeIntervalSinceNow] <= 0) {
+        self.messageLabel.text = @"In San Francisco!";
+        return;
+    }
+
     [self performSelector:@selector(calculateTimeIntervalOfTonysArrivalIntoSanFranciscoAndDisplaySaidTimeIntervalIntoAppropriateLabelsContainedWithinTheView)
                withObject:nil
                afterDelay:1];
